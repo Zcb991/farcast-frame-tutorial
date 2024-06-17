@@ -29,6 +29,9 @@ export default function Page() {
     <>
       <h1>coin-zcber</h1>
       <div>A man exploring web3</div>
+      <div>my warpcast：<a>https://warpcast.com/coinzcber</a></div>
+      <div>my far.quest：<a>https://far.quest/coin-zcber.cast</a></div>
+      <div>Follow me = Follow you</div>
     </>
   );
 }
