@@ -4,7 +4,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const searchParams = req.nextUrl.searchParams;
 //   const type: any = searchParams.get("type");
   const id: any = searchParams.get("id");
-  const idAsNumber = parseInt(id);
+//   const idAsNumber = parseInt(id);
+  let idAsNumber = parseInt(id);
 
 
   const nextId = idAsNumber + 1;
