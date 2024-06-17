@@ -10,8 +10,6 @@ export async function POST(req: NextRequest): Promise<Response> {
     path = "cosmiccowboys";
   } else if (buttonId === 2) {
     path = "pinatacloud";
-  } else if (buttonId === 3) {
-    path = "video";
   } else {
     path = "";
   }
