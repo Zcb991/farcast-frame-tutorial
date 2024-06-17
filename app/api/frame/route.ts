@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const searchParams = req.nextUrl.searchParams;
   const id: any = searchParams.get("id");
+  const type: any = searchParams.get("type");
   const idAsNumber = parseInt(id);
 
   const nextId = idAsNumber + 1;
@@ -22,9 +23,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return new NextResponse(`<!DOCTYPE html><html><head>
     <title>This is frame ${id}</title>
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmRoQoAn3p1cbYd6Kjm6vmvA51UgzSAJr7LQV75VpKEx4j/${id}.png" />
-    <meta property="fc:frame:button:1" content="Next Page" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
+    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmRoQoAn3p1cbYd6Kjm6vmvA51UgzSAJr7LQV75VpKEx4j/${nextId}.png" />
+    <meta property="fc:frame:button:1" content="Next" />
+    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}$type=next" />
   </head></html>`);
   }
 }
