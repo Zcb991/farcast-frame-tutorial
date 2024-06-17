@@ -82,11 +82,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <title>This is frame ${id}</title>
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmRoQoAn3p1cbYd6Kjm6vmvA51UgzSAJr7LQV75VpKEx4j/${id}.png" />
-    <meta property="fc:frame:button:1" content="Like" />
-    <meta property="fc:frame:button:2" content="Follow" />
-    <meta property="fc:frame:button:2:action" content="post_redirect" />
-    <meta property="fc:frame:button:3" content="Next" />
-    <meta property="fc:frame:button:3:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
+    <meta property="fc:frame:button:2" content="Like" />
+    <meta property="fc:frame:button:3" content="Follow" />
+    <meta property="fc:frame:button:3:action" content="post_redirect" />
+    <meta property="fc:frame:button:3:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
+    <meta property="fc:frame:button:4" content="Next" />
+    <meta property="fc:frame:button:4:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
   </head></html>`);
   }
   else {
@@ -99,6 +100,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:button:2" content="Like" />
     <meta property="fc:frame:button:3" content="Follow" />
     <meta property="fc:frame:button:3:action" content="post_redirect" />
+    <meta property="fc:frame:button:3:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
     <meta property="fc:frame:button:4" content="Next" />
     <meta property="fc:frame:button:4:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
   </head></html>`);
