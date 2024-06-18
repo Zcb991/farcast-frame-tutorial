@@ -87,7 +87,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         successDiv.innerText = 'Liked!';
       });
     </script>
-  </head><body><div id="heart" class="heart">❤️</div></body></html>`);
+  </head><body><div id="heart" class="heart">❤️</div><div id="success"></div></body></html>`);
   } else {
     return new NextResponse(`<!DOCTYPE html><html><head>
     <title>This is frame ${id}</title>
