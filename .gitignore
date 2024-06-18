@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # 测试文件
-zcbtest*.ts
+zcbtest*
