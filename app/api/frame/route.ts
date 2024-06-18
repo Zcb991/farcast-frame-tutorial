@@ -35,7 +35,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('meta[property="fc:frame:button:2"]').forEach(button => {
+      document.querySelectorAll('meta[property="fc:frame:button:1"]').forEach(button => {
         button.addEventListener('click', () => {
             var heart = document.getElementById('heart');
             heart.style.display = 'block';
@@ -51,24 +51,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   </script>
   `;
 
-  //   document.addEventListener('DOMContentLoaded', () => {
-  //     document.querySelectorAll('meta[property="fc:frame:button:2"]').forEach(button => {
-  //       button.addEventListener('click', () => showHeartEffect());
-  //     });
-  //   });
-  // 0:Begin
-  // 1: Null Like Follow Next
-  // 2-9: Back Like Follow Next
-  // 10: Back Like Follow Pinata
-  // Back: 1; Like: 2; Follow: 3; Next: 4; Pinata: 5
-  //   <meta property="fc:frame:button:2" content="Like" action="like_action" />
-//   <meta property="fc:frame:button:2:action" content="like_action" />
-
-// <meta property="fc:frame:button:3" content="Follow" />
-//     <meta property="fc:frame:button:3:action" content="post_redirect" />
-//     <meta property="fc:frame:button:3:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
-//     <meta property="fc:frame:button:4" content="Next" />
-//     <meta property="fc:frame:button:4:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
 
 // 1: Like Follow Next
 // 2-9:Like Follow Back Next
@@ -86,48 +68,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:button:4" content="Pinata" />
     <meta property="fc:frame:button:4:action" content="post_redirect" />
     <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
-    <style>
-        .heart {
-            position: absolute;
-            display: none;
-            color: red;
-            font-size: 2rem;
-            animation: fadeInOut 1.5s ease forwards;
-        }
-
-        @keyframes fadeInOut {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 0;
-            }
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('meta[property="fc:frame:button:1"]').forEach(button => {
-                button.addEventListener('click', () => {
-                    var heart = document.getElementById('heart');
-                    heart.style.display = 'block';
-                    heart.style.left = event.clientX + 'px';
-                    heart.style.top = event.clientY + 'px';
-
-                    setTimeout(function () {
-                        heart.style.display = 'none';
-                    }, 1000);
-                });
-            });
-        });
-    </script>
   </head><body><div id="heart" class="heart">❤️</div></body></html>`);
   } else if (idAsNumber == 1) {
     return new NextResponse(`<!DOCTYPE html><html><head>
@@ -140,47 +80,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
     <meta property="fc:frame:button:3" content="Next" />
     <meta property="fc:frame:button:3:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
-    <style>
-        .heart {
-            position: absolute;
-            display: none;
-            color: red;
-            font-size: 2rem;
-            animation: fadeInOut 1.5s ease forwards;
-        }
-
-        @keyframes fadeInOut {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 0;
-            }
-        }
-    </style>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('meta[property="fc:frame:button:1"]').forEach(button => {
-                button.addEventListener('click', () => {
-                    var heart = document.getElementById('heart');
-                    heart.style.display = 'block';
-                    heart.style.left = event.clientX + 'px';
-                    heart.style.top = event.clientY + 'px';
-
-                    setTimeout(function () {
-                        heart.style.display = 'none';
-                    }, 1000);
-                });
-            });
-        });
+      const likeButton = document.querySelector('[property="fc:frame:button:1"]');
+      const successDiv = document.querySelector('#success');
+      likeButton.addEventListener('click', () => {
+        successDiv.innerText = 'Liked!';
+      });
     </script>
   </head><body><div id="heart" class="heart">❤️</div></body></html>`);
   } else {
@@ -196,48 +101,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:button:3:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${prevId}" />
     <meta property="fc:frame:button:4" content="Next" />
     <meta property="fc:frame:button:4:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
-    <style>
-        .heart {
-            position: absolute;
-            display: none;
-            color: red;
-            font-size: 2rem;
-            animation: fadeInOut 1.5s ease forwards;
-        }
-
-        @keyframes fadeInOut {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 0;
-            }
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('meta[property="fc:frame:button:1"]').forEach(button => {
-                button.addEventListener('click', () => {
-                    var heart = document.getElementById('heart');
-                    heart.style.display = 'block';
-                    heart.style.left = event.clientX + 'px';
-                    heart.style.top = event.clientY + 'px';
-
-                    setTimeout(function () {
-                        heart.style.display = 'none';
-                    }, 1000);
-                });
-            });
-        });
-    </script>
+    ${heartAnimation}
   </head><body><div id="heart" class="heart">❤️</div></body></html>`);
   }
 }
